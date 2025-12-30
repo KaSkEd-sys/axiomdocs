@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KaskedOS - Documentation</title>
+    <title>Axiom - Documentation</title>
     <style>
         * {
             margin: 0;
@@ -240,7 +240,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <h1>KaskedOS</h1>
+                    <h1>Axiom</h1>
                 </div>
                 <nav>
                     <ul>
@@ -256,7 +256,7 @@
 
     <section class="hero">
         <div class="container">
-            <h2>KaskedOS Documentation</h2>
+            <h2>Axiom Documentation</h2>
             <p>A minimalist 16-bit operating system written in x86 assembly</p>
         </div>
     </section>
@@ -285,7 +285,7 @@
         <div class="documentation-section" id="overview">
             <h2>📋 Overview</h2>
             
-            <p>KaskedOS is a lightweight, educational operating system developed entirely in x86 assembly language. Designed to run in real mode, it provides a simple command-line interface with essential system utilities and component management capabilities.</p>
+            <p>Axiom is a lightweight, educational operating system developed entirely in x86 assembly language. Designed to run in real mode, it provides a simple command-line interface with essential system utilities and component management capabilities.</p>
 
             <h3>Key Highlights</h3>
             <ul>
@@ -310,7 +310,7 @@
             <h2>🚀 Getting Started</h2>
 
             <h3>Prerequisites</h3>
-            <p>Before building KaskedOS, ensure you have the following installed:</p>
+            <p>Before building Axiom, ensure you have the following installed:</p>
 
             <pre><code># Update package list
 sudo apt update
@@ -327,8 +327,8 @@ sudo apt install -y nasm qemu-system-x86</code></pre>
             <h3>Building from Source</h3>
             
             <p><strong>1. Clone the repository</strong></p>
-            <pre><code>git clone https://github.com/KaSkEd-sys/kaskeDOS.git
-cd kaskeDOS</code></pre>
+            <pre><code>git clone https://github.com/KaSkEd-sys/Axiom.git
+cd Axiom</code></pre>
 
             <p><strong>2. Make the build script executable</strong></p>
             <pre><code>chmod +x build.sh</code></pre>
@@ -340,20 +340,20 @@ cd kaskeDOS</code></pre>
             <ul>
                 <li>Assemble the bootloader (<code>boot.asm</code>)</li>
                 <li>Assemble the kernel (<code>kernel.asm</code>)</li>
-                <li>Create a bootable disk image (<code>kaskedos.img</code>)</li>
+                <li>Create a bootable disk image (<code>Axiom.img</code>)</li>
                 <li>Launch QEMU automatically</li>
             </ul>
 
             <h3>Manual Launch</h3>
             <p>To run the OS manually after building:</p>
-            <pre><code>qemu-system-i386 disk/kaskedos.img</code></pre>
+            <pre><code>qemu-system-i386 disk/Axiom.img</code></pre>
 
             <h3>First Boot</h3>
-            <p>After building, KaskedOS will launch automatically in QEMU. You'll be greeted with:</p>
-            <pre><code>=== KaskedOS v1.2 alpha ===
+            <p>After building, Axiom will launch automatically in QEMU. You'll be greeted with:</p>
+            <pre><code>=== Axiom v1.2 alpha ===
 type help for command list
 
-[fastuser]$kaskedos$ ></code></pre>
+[fastuser]$Axiom$ ></code></pre>
         </div>
 
         <div class="documentation-section" id="commands">
@@ -409,25 +409,25 @@ opreg -c       # Enable component
 opreg -d       # Disable component</code></pre>
 
             <p><strong>Example workflow:</strong></p>
-            <pre><code>[fastuser]$kaskedos$ > opreg -r
+            <pre><code>[fastuser]$Axiom$ > opreg -r
 OS Components Registry:
 fastfetch: DISABLED
 
-[fastuser]$kaskedos$ > opreg -c
+[fastuser]$Axiom$ > opreg -c
 Component enabled successfully
 
-[fastuser]$kaskedos$ > opreg -r
+[fastuser]$Axiom$ > opreg -r
 OS Components Registry:
 fastfetch: ENABLED
 
-[fastuser]$kaskedos$ > fastfetch
+[fastuser]$Axiom$ > fastfetch
             /\
-           /  \     fastuser@kaskedos
+           /  \     fastuser@Axiom
           / /\ \    ---------------------
-         ( (  ) )   OS: KaskedOS x86 v1.2 alpha
+         ( (  ) )   OS: Axiom x86 v1.2 alpha
         (  \  / )   Kernel: 16-bit Real Mode
          \  \/  /   Architecture: x86
-          \    /    Shell: kaskedos shell
+          \    /    Shell: Axiom shell
        /\ |  | /\   Uptime: Since boot
       /  \|  |/  \
      (    \  /    )
@@ -439,7 +439,7 @@ fastfetch: ENABLED
            \/</code></pre>
 
             <h3>Hidden Features</h3>
-            <p>KaskedOS includes components that are disabled by default. These features can be discovered and enabled through the component registry system using the <code>opreg</code> command. Use <code>opreg -r</code> to see which components are available and <code>opreg -c</code> to enable them!</p>
+            <p>Axiom includes components that are disabled by default. These features can be discovered and enabled through the component registry system using the <code>opreg</code> command. Use <code>opreg -r</code> to see which components are available and <code>opreg -c</code> to enable them!</p>
         </div>
 
         <div class="documentation-section" id="technical">
@@ -470,7 +470,7 @@ fastfetch: ENABLED
             </ol>
 
             <h3>Project Structure</h3>
-            <pre><code>kaskedos/
+            <pre><code>Axiom/
 ├── src/
 │   ├── boot.asm       # Bootloader (stage 1, 512 bytes)
 │   └── kernel.asm     # Kernel and shell implementation
@@ -478,7 +478,7 @@ fastfetch: ENABLED
 │   ├── boot.bin       # Compiled bootloader
 │   └── kernel.bin     # Compiled kernel
 ├── disk/
-│   └── kaskedos.img   # Bootable disk image
+│   └── Axiom.img   # Bootable disk image
 ├── build.sh           # Build automation script
 └── README.md          # Project documentation</code></pre>
 
@@ -572,7 +572,7 @@ fastfetch: ENABLED
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 KaskedOS. Made with ❤️ and Assembly</p>
+            <p>&copy; 2024 Axiom. Made with ❤️ and Assembly</p>
             <p>Simple, powerful, educational.</p>
         </div>
     </footer>
